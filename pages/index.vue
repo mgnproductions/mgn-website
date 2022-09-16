@@ -282,6 +282,56 @@
         </v-col>
       </v-row>
     </v-container>
+
+    <v-container class="section5-5 mt-15 pt-15">
+      <v-row justify="start">
+        <v-col cols="12" sm="9" class="">
+          <h4 class="mb-6 text-center font-weight-bold">
+            Membros da comunidade MGN
+          </h4>
+        </v-col>
+        <v-col
+          v-for="(member, i) in communityMembers"
+          :key="i"
+          cols="12"
+          sm="4"
+          md="4"
+          class="card text-left"
+        >
+          <v-card class="border-card d-flex pa-4">
+            <v-img
+              contain
+              class="mr-4"
+              max-width="100"
+              :src="require(`assets/images/icon-litepaper.webp`)"
+            >
+            </v-img>
+            <div class="d-flex flex-column justify-center">
+              <h5 class="text-uppercase font-weight-bold">
+                {{ member.name }}
+              </h5>
+              <h5 class="">{{ member.role }}</h5>
+            </div>
+          </v-card>
+        </v-col>
+        <v-col cols="12" sm="12" md="12" class="text-center pt-sm-16">
+          <a
+            href=""
+            target="_blank"
+            rel="noopener noreferrer"
+            style="color: #8888fd"
+            class="link"
+          >
+            Conhece todos membros através do nosso Discord<icon-arrow-forward
+              class="ml-1"
+              color="#8888fd"
+            >
+            </icon-arrow-forward>
+          </a>
+        </v-col>
+      </v-row>
+    </v-container>
+
     <v-container id="tokens" fluid class="section6 mt-15 pt-15">
       <v-row justify="center">
         <v-col cols="12" sm="6" md="6" class="text-left pr-sm-10">
@@ -388,7 +438,7 @@
           </h2>
         </v-col>
         <v-col cols="12" sm="5" md="5" class="card text-left">
-          <v-card class="litepaper-card">
+          <v-card class="border-card">
             <v-img
               contain
               class="mx-0 mb-7"
@@ -464,6 +514,24 @@ export default {
 
   data() {
     return {
+      communityMembers: [
+        {
+          name: 'Filipe Veiga',
+          role: 'Espectador de cinema',
+        },
+        {
+          name: 'Filipe Veiga',
+          role: 'Espectador de cinema',
+        },
+        {
+          name: 'Filipe Veiga',
+          role: 'Espectador de cinema',
+        },
+        {
+          name: 'Filipe Veiga',
+          role: 'Espectador de cinema',
+        },
+      ],
       uploadedTicket: null,
       uploadedTicketName: 'Nenhum ficheiro selecionado',
       location: null,
@@ -673,18 +741,21 @@ export default {
     margin: 0 auto;
   }
 }
-
-.section7 {
+#mgn {
   .collection-card,
-  .litepaper-card {
+  .border-card {
     border-radius: 4px;
     box-shadow: none !important;
     padding: 45px 60px;
     height: 100%;
   }
-  .litepaper-card {
+  .border-card {
     border: solid 1px #242424;
   }
+}
+
+.section7 {
+  .collection-card,
   .collection-card {
     background-image: linear-gradient(68deg, #faf4ec 5%, #d7d3f1 93%);
   }

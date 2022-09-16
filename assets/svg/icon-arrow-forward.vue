@@ -8,8 +8,18 @@
   >
     <path
       d="M6.5 0 13 4.055v2.89L6.5 11V8.81l5.228-3.17v-.28L6.5 2.214V0z"
-      fill="#fff"
+      :fill="color"
     />
-    <path d="M12.071 4.583v1.834H0V4.583h12.071z" fill="#fff" />
+    <path d="M12.071 4.583v1.834H0V4.583h12.071z" :fill="color" />
   </svg>
 </template>
+<script>
+export default {
+  props: {
+    color: {
+      type: String,
+      default: '#fff',
+    },
+  },
+}
+</script>
