@@ -5,7 +5,7 @@
       <slot></slot>
     </ul>
     <button class="nav-close" @click="$emit('close')">
-      <icon-close> </icon-close>
+      <icon-close color="#242424"> </icon-close>
     </button>
   </div>
 </template>

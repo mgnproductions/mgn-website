@@ -19,7 +19,7 @@
       <v-col cols="12" class="pa-0">
         <OwlCarousel v-bind="settings">
           <div
-            v-for="i in 16"
+            v-for="i in 21"
             :key="i"
             :style="{
               width:
@@ -310,13 +310,13 @@
           class="card text-left"
         >
           <v-card class="border-card d-flex pa-4">
-            <v-img
-              contain
+            <img
               class="mr-4"
+              alt="Member photo"
               max-width="100"
-              :src="require(`assets/images/icon-litepaper.webp`)"
-            >
-            </v-img>
+              :src="`member-photos/member (${0}).webp`"
+            />
+
             <div class="d-flex flex-column justify-center">
               <h5 class="text-uppercase font-weight-bold">
                 {{ member.name }}
@@ -462,10 +462,14 @@
             </div>
             <p class="normal-text">
               Sabe mais sobre os MGN tokens no nosso LitePaper. Descarrega
-              <a href="" target="_blank" class="link" style="color: #8888fd">
-                aqui
-              </a>
-              .
+              <a
+                href="/litepaper.pdf"
+                target="_blank"
+                class="link"
+                style="color: #8888fd"
+              >
+                aqui</a
+              >.
             </p>
           </v-card>
         </v-col>
