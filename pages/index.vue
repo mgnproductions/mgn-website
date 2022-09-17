@@ -463,10 +463,11 @@
             <p class="normal-text">
               Sabe mais sobre os MGN tokens no nosso LitePaper. Descarrega
               <a
-                href="/litepaper.pdf"
+                href=""
                 target="_blank"
                 class="link"
                 style="color: #8888fd"
+                @click="downloadFile('/litepaper.pdf')"
               >
                 aqui</a
               >.
@@ -606,6 +607,9 @@ export default {
     }
   },
   methods: {
+    downloadFile(file) {
+      window.open('/litepaper.pdf')
+    },
     submit() {},
     handleTicketUpload() {
       const file = this.$refs['ticket-upload']?.files?.[0]
