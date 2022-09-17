@@ -467,7 +467,7 @@
                 target="_blank"
                 class="link"
                 style="color: #8888fd"
-                @click="downloadFile('/litepaper.pdf')"
+                @click="downloadFile('/mgn-website/litepaper.pdf')"
               >
                 aqui</a
               >.
@@ -608,7 +608,7 @@ export default {
   },
   methods: {
     downloadFile(file) {
-      window.open('/litepaper.pdf')
+      window.open(file)
     },
     submit() {},
     handleTicketUpload() {
