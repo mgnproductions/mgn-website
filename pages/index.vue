@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid class="pa-0 pb-16">
+  <v-container fluid class="pa-sm-0 pb-16">
     <v-row justify="center" align="start" class="section1">
       <v-col cols="12" class="text-center pt-15">
         <h1>Comunidade MGN Filmes</h1>
@@ -22,9 +22,20 @@
             v-for="i in 16"
             :key="i"
             :style="{
-              width: i == 1 ? '290px' : '990px',
-              height: i == 1 ? '420px' : '420px',
+              width:
+                i == 1
+                  ? '290px'
+                  : $vuetify.breakpoint.mobile
+                  ? '70vw'
+                  : '990px',
+              height:
+                i == 1
+                  ? '420px'
+                  : $vuetify.breakpoint.mobile
+                  ? '30vh'
+                  : '420px',
             }"
+            class="d-flex align-center"
           >
             <v-hover v-slot="{ hover }">
               <v-card class="carousel-card" :class="{ 'on-hover': hover }">
@@ -88,8 +99,7 @@
           style="position: relative"
         >
           <OwlCarousel
-            style="width: 8000px; position: absolute"
-            class="d-flex"
+            class="d-flex movie-poster-carousel"
             v-bind="{
               ...settings,
               margin: 20,
@@ -102,6 +112,7 @@
               :key="i"
               :style="{
                 width: '282px',
+                height: '400px',
               }"
             >
               <v-card class="carousel-card">
@@ -620,6 +631,17 @@ export default {
 }
 </script>
 <style lang="scss">
+.owl-stage-outer {
+  max-width: 100vw !important;
+}
+.movie-poster-carousel {
+  @media screen and (min-width: 1024px) {
+    position: absolute;
+    max-width: 47.5vw;
+  }
+  // max-width: 47.5vw;
+  // width: 100%;
+}
 .section-team {
   .member-card:nth-child(1) > div:first-child {
     background-image: linear-gradient(59deg, #f9f3ec 5%, #e1dcf0 92%);
@@ -634,6 +656,7 @@ export default {
   .member-card {
     text-align: center;
     position: relative;
+    overflow: hidden;
     .member-info {
       position: absolute;
       opacity: 0;
@@ -641,6 +664,7 @@ export default {
       left: 50%;
       translate: -50% -50%;
       width: 80%;
+      max-width: 100vw;
       animation: puff-out-center 0.2s cubic-bezier(0.47, 0, 0.745, 0.715) both;
     }
 
@@ -678,6 +702,7 @@ export default {
 .carousel-card.v-card {
   box-shadow: none !important;
   border-radius: 0;
+  background: none;
   .action-btn {
     display: none;
   }
@@ -694,13 +719,17 @@ export default {
   height: 420px;
 }
 .section1 {
+  padding-bottom: 60px;
   background-image: linear-gradient(
     55deg,
     #faf4ec 13%,
     #c5c3f3 71%,
     #9595fa 94%
   );
-  height: 870px;
+  max-width: 100vw;
+  @media screen and (min-width: 1024px) {
+    height: 870px;
+  }
 }
 .section4 {
   background-color: #242424;
