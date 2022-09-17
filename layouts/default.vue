@@ -5,25 +5,53 @@
         <MgnLogo></MgnLogo>
       </nuxt-link>
       <v-spacer />
+      <div class="d-none d-sm-flex justify-space-around grow">
+        <nuxt-link class="header-link" :to="{ path: '', hash: '#team' }"
+          >Quem Somos</nuxt-link
+        >
+        <nuxt-link class="header-link" :to="{ path: '', hash: '#community' }"
+          >Comunidade</nuxt-link
+        >
+        <nuxt-link class="header-link" :to="{ path: '', hash: '#tokens' }"
+          >MGN tokens</nuxt-link
+        >
+        <nuxt-link class="header-link" :to="{ path: '', hash: '#collections' }"
+          >Colecções NFTs</nuxt-link
+        >
+        <v-spacer />
 
-      <nuxt-link class="header-link" :to="{ path: '', hash: '#team' }"
-        >Quem Somos</nuxt-link
-      >
-      <nuxt-link class="header-link" :to="{ path: '', hash: '#community' }"
-        >Comunidade</nuxt-link
-      >
-      <nuxt-link class="header-link" :to="{ path: '', hash: '#tokens' }"
-        >MGN tokens</nuxt-link
-      >
-      <nuxt-link class="header-link" :to="{ path: '', hash: '#collections' }"
-        >Colecções NFTs</nuxt-link
-      >
-      <v-spacer />
-
-      <v-btn class="action-btn" :ripple="false" color="#242424">
-        RECEBE MGN TOKENS
-        <IconArrowDown class="ml-2"></IconArrowDown>
-      </v-btn>
+        <v-btn class="action-btn" :ripple="false" color="#242424">
+          RECEBE MGN TOKENS
+          <IconArrowDown class="ml-2"></IconArrowDown>
+        </v-btn>
+      </div>
+      <nav-bar-menu v-if="showNav" class="" @close="showNav = false">
+        <li @click="showNav = false">
+          <nuxt-link class="header-link" :to="{ path: '', hash: '#team' }"
+            >Quem Somos</nuxt-link
+          >
+        </li>
+        <li @click="showNav = false">
+          <nuxt-link class="header-link" :to="{ path: '', hash: '#community' }"
+            >Comunidade</nuxt-link
+          >
+        </li>
+        <li @click="showNav = false">
+          <nuxt-link class="header-link" :to="{ path: '', hash: '#tokens' }"
+            >MGN tokens</nuxt-link
+          >
+        </li>
+        <li @click="showNav = false">
+          <nuxt-link
+            class="header-link"
+            :to="{ path: '', hash: '#collections' }"
+            >Colecções NFTs</nuxt-link
+          >
+        </li>
+      </nav-bar-menu>
+      <div class="box hidden-sm-and-up">
+        <button class="hamburger-menu" @click="showNav = true">&#9776;</button>
+      </div>
     </v-app-bar>
     <v-main>
       <div>
@@ -82,7 +110,7 @@ export default {
   name: 'DefaultLayout',
   components: { MgnLogo, IconArrowDown, MgnFooterLogo, IconDiscord },
   data() {
-    return {}
+    return { showNav: false }
   },
 }
 </script>
@@ -100,8 +128,8 @@ export default {
     text-decoration: none;
 
     margin: 0 15px;
-    display: flex;
-    align-items: center;
+    // display: flex;
+    // align-items: center;
     &.nuxt-link-exact-active {
       font-weight: bold;
     }
