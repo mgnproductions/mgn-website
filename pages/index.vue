@@ -62,10 +62,12 @@
       </v-col>
       <v-col cols="12" class="text-center">
         <h4 class="">Viste o filme “A Fada do Lar”?</h4>
-        <v-btn class="action-btn mt-3" :ripple="false" color="#242424">
-          RECEBE MGN TOKENS
-          <IconArrowDown class="ml-2"> </IconArrowDown>
-        </v-btn>
+        <nuxt-link class="" :to="{ path: '', hash: '#tokens' }">
+          <v-btn class="action-btn mt-3" :ripple="false" color="#242424">
+            RECEBE MGN TOKENS
+            <IconArrowDown class="ml-2"> </IconArrowDown>
+          </v-btn>
+        </nuxt-link>
       </v-col>
     </v-row>
     <span id="team"></span>
@@ -211,7 +213,10 @@
             utilização de iniciativas offline e online, bem como de ferramentas
             da Web3.
           </p>
-          <a href="" target="_blank" class="white--text link"
+          <a
+            href="https://discord.gg/cFyut8Asr8"
+            target="_blank"
+            class="white--text link"
             >Sabe mais sobre a Comunidade MGN
             <IconArrowForward></IconArrowForward>
           </a>
@@ -282,9 +287,11 @@
               O número de tokens a distribuir por cada um será determinado pela
               MGN Filmes Lda.*
             </p>
-            <v-btn class="action-btn mb-5" :ripple="false" color="#242424">
-              FALE CONNOSCO PELO DISCORD
-            </v-btn>
+            <a href="https://discord.gg/cFyut8Asr8" target="_blank">
+              <v-btn class="action-btn mb-5" :ripple="false" color="#242424">
+                FALE CONNOSCO PELO DISCORD
+              </v-btn>
+            </a>
             <p class="info-message">
               *Em datas a anunciar, a MGN distribuirá $MGN tokens por
               participantes em anteriores e futuras produções.
@@ -296,7 +303,7 @@
 
     <v-container class="section5-5 mt-15 pt-15">
       <v-row justify="start">
-        <v-col cols="12" sm="9" class="">
+        <v-col cols="12" sm="12" class="">
           <h4 class="mb-6 text-center font-weight-bold">
             Membros da comunidade MGN
           </h4>
@@ -327,7 +334,7 @@
         </v-col>
         <v-col cols="12" sm="12" md="12" class="text-center pt-sm-16">
           <a
-            href=""
+            href="https://discord.gg/cFyut8Asr8"
             target="_blank"
             rel="noopener noreferrer"
             style="color: #8888fd"
@@ -438,7 +445,7 @@
     </v-container>
 
     <span id="collections"></span>
-    <v-container class="section7 mt-15 pt-15 pb-16">
+    <v-container class="section7 my-15 pt-15 pb-16">
       <v-row justify="center">
         <v-col cols="12" sm="12" class="">
           <h5 class="mb-6 font-weight-bold" style="color: #8888fd">

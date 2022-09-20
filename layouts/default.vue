@@ -20,10 +20,12 @@
         >
         <v-spacer />
 
-        <v-btn class="action-btn" :ripple="false" color="#242424">
-          RECEBE MGN TOKENS
-          <IconArrowDown class="ml-2"></IconArrowDown>
-        </v-btn>
+        <nuxt-link :to="{ path: '', hash: '#tokens' }">
+          <v-btn class="action-btn" :ripple="false" color="#242424">
+            RECEBE MGN TOKENS
+            <IconArrowDown class="ml-2"></IconArrowDown>
+          </v-btn>
+        </nuxt-link>
       </div>
       <nav-bar-menu v-if="showNav" class="" @close="showNav = false">
         <li @click="showNav = false">
@@ -62,27 +64,28 @@
       <v-container>
         <v-row>
           <MgnFooterLogo />
-          <v-spacer />
-
-          <nuxt-link class="header-link" :to="{ path: '', hash: '#team' }"
-            >Quem Somos</nuxt-link
-          >
-          <nuxt-link class="header-link" :to="{ path: '', hash: '#community' }"
-            >Comunidade</nuxt-link
-          >
-          <nuxt-link class="header-link" :to="{ path: '', hash: '#tokens' }"
-            >MGN tokens</nuxt-link
-          >
-          <nuxt-link
-            class="header-link"
-            :to="{ path: '', hash: '#collections' }"
-            >Colecções NFTs</nuxt-link
-          >
-          <v-spacer />
+          <div class="d-none d-sm-flex justify-space-around grow">
+            <nuxt-link class="header-link" :to="{ path: '', hash: '#team' }"
+              >Quem Somos</nuxt-link
+            >
+            <nuxt-link
+              class="header-link"
+              :to="{ path: '', hash: '#community' }"
+              >Comunidade</nuxt-link
+            >
+            <nuxt-link class="header-link" :to="{ path: '', hash: '#tokens' }"
+              >MGN tokens</nuxt-link
+            >
+            <nuxt-link
+              class="header-link"
+              :to="{ path: '', hash: '#collections' }"
+              >Colecções NFTs</nuxt-link
+            >
+          </div>
 
           <a
-            class="header-link white--text text-decoration-none"
-            href=""
+            class="header-link white--text text-decoration-none d-flex align-center"
+            href="https://discord.gg/cFyut8Asr8"
             target="_blank"
           >
             <IconDiscord class="mr-2" />
@@ -128,6 +131,8 @@ export default {
     text-decoration: none;
 
     margin: 0 15px;
+    display: flex;
+    align-items: center;
     // display: flex;
     // align-items: center;
     &.nuxt-link-exact-active {
